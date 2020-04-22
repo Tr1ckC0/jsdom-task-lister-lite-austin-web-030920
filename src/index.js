@@ -1,27 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // form = document.getElementById("create-task-form")
-  // form.addEventListener('submit', function(event) {
-  //   inputField = document.getElementById("new-task-description")
-  //   inputField.value
-  //   event.preventDefault();
-  // });
 
-  findForm().addEventListener('submit', (event) => {
+  grabForm().addEventListener('submit', handleSubmitForm(event) {
     // get the value for the text field *
     // get the element that we want to append this to *
     // create li child *
     // assign li text content *
     // append the value of the text field to that element
-    let li = createLiElement();
-    li.textContent = textFieldValue();
-    ulEl().appendChild(li);
-    event.preventDefault();
   });
 });
 
+function handleSubmitForm(event) {
+  const li = createLiElement();
+  li.textContent = textFieldValue();
+  const ul = grabList();
+  ul.appendChild(li);
+  event.preventDefault();
+};
+
 // Step 1
 
-function findForm() {
+function grabForm() {
  return document.getElementById("create-task-form");
 };
 
@@ -38,7 +36,7 @@ function textFieldValue() {
 };
 
 //Step 4
-function ulEl() {
+function grabList() {
   return document.getElementById("tasks");
 };
 
